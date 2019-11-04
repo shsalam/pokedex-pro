@@ -8,7 +8,7 @@ class App extends PureComponent {
     return (
       <>
         <Switch>
-          <Route path='/' exact component={Home} />
+          <Route path="/" exact component={Home} />
         </Switch>
       </>
     );

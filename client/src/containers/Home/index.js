@@ -1,8 +1,12 @@
 import React, { PureComponent } from "react";
-
+import Header from "../../components/sections/Header";
 export class index extends PureComponent {
   render() {
-    return <div>Home</div>;
+    return (
+      <div>
+        <Header />
+      </div>
+    );
   }
 }
 

@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $color-primary;
+  font-family: "Pokemon Pixel Font";
+  padding: 1.5rem 1rem;
+}
+
+.logo {
+  display: flex;
+
+  &__text {
+    font-size: 2.4rem;
+    color: $color-white;
+
+    &--red {
+      color: $color-tertiary;
+    }
+  }
+
+  &__img {
+    height: 3.5rem;
+  }
+}
+
+// search styling goes here (because it's a parent
