@@ -5,3 +5,7 @@
 .logo-second {
   color: #fff;
 }
+
+.card-title {
+  text-transform: capitalize;
+}
