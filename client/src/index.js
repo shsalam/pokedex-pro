@@ -1,22 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import App from "App";
 
-import store from "stores";
-
-import "sass/main.scss";
+import "./App.css";
 
 import registerServiceWorker from "registerServiceWorker";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.querySelector("#root")
 );
 
