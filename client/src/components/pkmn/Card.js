@@ -22,7 +22,7 @@ export default class Card extends Component {
   }
   render() {
     return (
-      <div className="col-md-4 col-sm-6">
+      <div className="col-md-4 col-sm-6 mb-3">
         <Link to={`pokemon/${this.state.number}`}>
           <div className="card">
             <h5 className="card-header">{this.state.number}</h5>
