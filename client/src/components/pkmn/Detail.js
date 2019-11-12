@@ -38,7 +38,7 @@ export default class Detail extends Component {
     // urls for pokemon information
     const pokeURL = `https://pokeapi.co/api/v2/pokemon/${number}/`;
     const speciesURL = `https://pokeapi.co/api/v2/pokemon-species/${number}/`;
-    const typeURL = `https://pokeapi.co/api/v2/type/${number}/`;
+
     // get basic pokemon info
     const pokemonRes = await axios.get(pokeURL);
     const name = pokemonRes.data.name;

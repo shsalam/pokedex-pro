@@ -8,6 +8,7 @@ function General(props) {
           <img
             src={props.spriteURL}
             className="card-img-top img-thumbnail rounded mx-auto mt-2"
+            alt=""
           />
         </div>
         <div className="col-md-9">

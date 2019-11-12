@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Form, Card } from "components";
-import axios from "axios";
+import { Form } from "components";
 export default class Search extends Component {
   state = { term: "" };
 
