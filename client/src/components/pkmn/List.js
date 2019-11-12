@@ -4,16 +4,17 @@ import { Card, Pagination, Search } from "components";
 export default class List extends Component {
   state = {
     pokemon: null,
+    results: null,
     currentOffset: 0
   };
   async componentDidMount() {
-    const res = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon?limit=15&offset=0`
-    );
+    const res = await axios.get(`http://localhost:5000/pokemon`);
+    const res2 = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=807`);
     this.setState({
-      pokemon: res.data["results"],
-      totalResults: res.data.length
+      pokemon: res.data,
+      results: res2.data["results"]
     });
+    console.log(res.data);
   }
   nextPage = async offset => {
     const res2 = await axios.get(
@@ -37,7 +38,7 @@ export default class List extends Component {
           currentOffset={this.state.currentOffset}
         />
         <div className="mb-3">
-          <Search />
+          <Search find={this.state.results} />
         </div>
 
         {this.state.pokemon ? (

@@ -5,6 +5,9 @@ const cors = require("cors");
 
 const app = express();
 
+// Routes Requires
+const pokemon = require("./routes/pokemon");
+
 //Middleware
 app.use(cors());
 app.use(express.json({ extended: false }));
@@ -21,6 +24,9 @@ mongoose
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
+
+// routes
+app.use("/", pokemon);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

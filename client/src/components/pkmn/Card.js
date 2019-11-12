@@ -17,7 +17,7 @@ export default class Card extends Component {
   componentDidMount() {
     const { name, url } = this.props;
     const number = url.split("/")[url.split("/").length - 2];
-    const sprite = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${number}.png?raw=true`;
+    const sprite = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`;
     this.setState({ name, sprite, number });
   }
   render() {

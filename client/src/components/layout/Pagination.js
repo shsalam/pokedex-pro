@@ -13,11 +13,7 @@ function Pagination(props) {
       </li>
     );
   }
-  return (
-    <div classname="container">
-      <div className="pagination">{pageLinks}</div>
-    </div>
-  );
+  return <div className="pagination">{pageLinks}</div>;
 }
 
 export default Pagination;

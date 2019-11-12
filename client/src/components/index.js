@@ -8,13 +8,16 @@ import Profile from "./pkmn/Profile";
 import Pagination from "./layout/Pagination";
 import Search from "./layout/Search";
 import Form from "./layout/Form";
-export { Search };
-export { Form };
-export { Pagination };
-export { Dash };
-export { Header };
-export { List };
-export { Card };
-export { Detail };
-export { General };
-export { Profile };
+
+export {
+  Search,
+  Form,
+  Pagination,
+  Dash,
+  Header,
+  List,
+  Card,
+  Detail,
+  General,
+  Profile
+};
