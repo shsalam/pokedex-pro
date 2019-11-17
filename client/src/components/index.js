@@ -7,11 +7,9 @@ import General from "./pkmn/General";
 import Profile from "./pkmn/Profile";
 import Pagination from "./layout/Pagination";
 import Search from "./layout/Search";
-import Form from "./layout/Form";
 
 export {
   Search,
-  Form,
   Pagination,
   Dash,
   Header,

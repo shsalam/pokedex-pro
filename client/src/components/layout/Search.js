@@ -1,33 +1,24 @@
 import React, { Component } from "react";
-import { Form } from "components";
 export default class Search extends Component {
-  state = { term: "" };
-
+  state = {
+    filter: ""
+  };
   handleChange = e => {
-    this.setState({ term: e.target.value });
+    this.setState({
+      filter: e.target.value
+    });
+    this.props.onChange(e.target.value);
   };
   render() {
-    /*  let poke = this.props.find
-      ? this.props.find.filter(poke => {
-          return poke.name.indexOf(this.state.term) !== -1;
-        })
-      : null;
-
-
-      {poke ? (
-          <div className="row">
-            {poke.map(pokemon => (
-              <li>{pokemon.name}</li>
-            ))}
-          </div>
-        ) : (
-          <h1>Loading</h1>
-        )}
-      */
-
     return (
       <div>
-        <Form handleChange={this.handleChange}></Form>
+        <label htmlFor="filter">Search by Pokemon: </label>
+        <input
+          type="text"
+          id="filter"
+          value={this.state.filter}
+          onChange={this.handleChange}
+        />
       </div>
     );
   }

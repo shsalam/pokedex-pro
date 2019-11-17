@@ -22,10 +22,10 @@ export default class Card extends Component {
   }
   render() {
     return (
-      <div className="col-md-4 col-sm-6 mb-3">
+      <div className="col-md-3 col-sm-6 mb-3">
         <Link to={`pokemon/${this.state.number}`}>
           <div className="card">
-            <h5 className="card-header">{this.state.number}</h5>
+            <h5 className="card-header">{this.state.number} </h5>
             <Sprite
               className="card-img-top rounded mx-auto mt-2"
               onLoad={() => this.setState({ imageLoading: false })}
