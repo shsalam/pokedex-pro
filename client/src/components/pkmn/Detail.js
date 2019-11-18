@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Profile, General } from "components";
+import { Header, Profile, General } from "components";
 import TYPE_COLORS from "../../helpers/colors";
 export default class Detail extends Component {
   // description state
@@ -161,62 +161,64 @@ export default class Detail extends Component {
   //Render gets split into two main components, General.js and Profile.js
   render() {
     return (
-      <div className="col">
-        <div className="card">
-          <div className="card-header">
-            <div className="row">
-              <div className="col-5">
-                <h5>{this.state.number} </h5>
-              </div>
-              <div className="col-7">
-                <div className="float-right">
-                  {this.state.types.map(type => (
-                    <span
-                      key={type}
-                      className="badge badge-pill mr-1"
-                      style={{
-                        backgroundColor: `#${TYPE_COLORS[type]}`,
-                        color: "white"
-                      }}
-                    >
-                      {type
-                        .toLowerCase()
-                        .split(" ")
-                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-                        .join(" ")}
-                    </span>
-                  ))}
+      <div>
+        <Header />
+        <div className="container mt-3">
+          <div className="card">
+            <div className="card-header">
+              <div className="row">
+                <div className="col-5">
+                  <h5>{this.state.number} </h5>
+                </div>
+                <div className="col-7">
+                  <div className="float-right">
+                    {this.state.types.map(type => (
+                      <span
+                        key={type}
+                        className="badge badge-pill mr-1"
+                        style={{
+                          backgroundColor: `#${TYPE_COLORS[type]}`,
+                          color: "white"
+                        }}
+                      >
+                        {type
+                          .toLowerCase()
+                          .split(" ")
+                          .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                          .join(" ")}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+            <General
+              spriteURL={this.state.sprite}
+              name={this.state.name}
+              titleWidth={this.state.statTitleWidth}
+              barWidth={this.state.statBarWidth}
+              hp={this.state.stats.hp}
+              attack={this.state.stats.attack}
+              defense={this.state.stats.defense}
+              speed={this.state.stats.speed}
+              spAttack={this.state.stats.specialAttack}
+              spDefense={this.state.stats.specialDefense}
+              themeColor={this.state.themeColor}
+              description={this.state.description}
+            />
+            <hr />
+            <Profile
+              height={this.state.height}
+              weight={this.state.weight}
+              catchRate={this.state.catchRate}
+              genderRatioFemale={this.state.genderRatioFemale}
+              genderRatioMale={this.state.genderRatioMale}
+              eggGroups={this.state.eggGroups}
+              hatchSteps={this.state.hatchSteps}
+              abilities={this.state.abilities}
+              evs={this.state.evs}
+            />
           </div>
-          <General
-            spriteURL={this.state.sprite}
-            name={this.state.name}
-            titleWidth={this.state.statTitleWidth}
-            barWidth={this.state.statBarWidth}
-            hp={this.state.stats.hp}
-            attack={this.state.stats.attack}
-            defense={this.state.stats.defense}
-            speed={this.state.stats.speed}
-            spAttack={this.state.stats.specialAttack}
-            spDefense={this.state.stats.specialDefense}
-            themeColor={this.state.themeColor}
-            description={this.state.description}
-          />
-          <hr />
-          <Profile
-            height={this.state.height}
-            weight={this.state.weight}
-            catchRate={this.state.catchRate}
-            genderRatioFemale={this.state.genderRatioFemale}
-            genderRatioMale={this.state.genderRatioMale}
-            eggGroups={this.state.eggGroups}
-            hatchSteps={this.state.hatchSteps}
-            abilities={this.state.abilities}
-            evs={this.state.evs}
-          />
-          <div class="card-footer text-muted">Sample Footer Text</div>
         </div>
       </div>
     );

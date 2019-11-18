@@ -5,17 +5,6 @@ import Card from "./pkmn/Card";
 import Detail from "./pkmn/Detail";
 import General from "./pkmn/General";
 import Profile from "./pkmn/Profile";
-import Pagination from "./layout/Pagination";
 import Search from "./layout/Search";
-
-export {
-  Search,
-  Pagination,
-  Dash,
-  Header,
-  List,
-  Card,
-  Detail,
-  General,
-  Profile
-};
+import Footer from "./layout/Footer";
+export { Search, Dash, Header, List, Card, Detail, General, Profile, Footer };

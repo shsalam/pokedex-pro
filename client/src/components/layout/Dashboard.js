@@ -1,15 +1,29 @@
-import React from "react";
-import { List } from "components";
-function dashboard() {
-  return (
-    <div>
-      <div className="row">
-        <div className="col">
-          <List />
-        </div>
-      </div>
-    </div>
-  );
-}
+import React, { Component } from "react";
+import { Header, List, Footer } from "components";
+import axios from "axios";
+export default class Dashboard extends Component {
+  state = {
+    pokemon: [],
+    result: [],
+    filteredResult: [],
+    filteredNumber: [],
+    query: ""
+  };
 
-export default dashboard;
+  async componentDidMount() {
+    const res = await axios.get(`http://localhost:5000/pokemon`);
+    this.setState({
+      result: res.data
+    });
+    console.log(this.state.result);
+  }
+  render() {
+    return (
+      <>
+        <Header pokeDB={this.state.result} />
+        <List pokeDB={this.state.result} />
+        <Footer />
+      </>
+    );
+  }
+}

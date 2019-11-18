@@ -3,11 +3,11 @@ import React from "react";
 function General(props) {
   return (
     <div className="card-body">
-      <div className="row align-items-center">
+      <div className="row align-items-center text">
         <div className=" col-md-3 ">
           <img
             src={props.spriteURL}
-            className="card-img-top img-thumbnail rounded mx-auto mt-2"
+            className="img-thumbnail rounded mx-auto mt-2"
             alt=""
           />
         </div>

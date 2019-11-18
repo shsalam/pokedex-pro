@@ -25,7 +25,6 @@ export default class Card extends Component {
       <div className="col-md-3 col-sm-6 mb-3">
         <Link to={`pokemon/${this.state.number}`}>
           <div className="card">
-            <h5 className="card-header">{this.state.number} </h5>
             <Sprite
               className="card-img-top rounded mx-auto mt-2"
               onLoad={() => this.setState({ imageLoading: false })}
@@ -33,9 +32,12 @@ export default class Card extends Component {
               src={this.state.sprite}
             ></Sprite>
 
-            <div className="card-body mx-auto">
+            <div className="card-body float-left">
               <h6>
-                <div className="card-title">{this.state.name}</div>
+                <div className="card-title">
+                  {this.state.name}{" "}
+                  <span class="float-right">{this.state.number} </span>
+                </div>
               </h6>
             </div>
           </div>
