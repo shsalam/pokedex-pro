@@ -1,21 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function Footer() {
+function Navbar() {
   return (
     <div>
-      <div className="container" style={{ color: "white" }}>
-        <footer className="footer">
+      <nav className="navbar row navbar-dark bg-dark">
+        <div className="container">
           <Link to={"/"}>
             <div className="navbar-brand mr-0 align-items-center">
               <span className="logo-first mr-1">POKEDEX</span>
               <span className="logo-second">PRO</span>
             </div>
           </Link>
-          <span class="text">Created by sheef using pokeapi.co</span>
-        </footer>
-      </div>
+        </div>
+      </nav>
     </div>
   );
 }
-
-export default Footer;
+export default Navbar;

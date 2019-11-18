@@ -4,10 +4,7 @@ import axios from "axios";
 export default class Dashboard extends Component {
   state = {
     pokemon: [],
-    result: [],
-    filteredResult: [],
-    filteredNumber: [],
-    query: ""
+    result: []
   };
 
   async componentDidMount() {
@@ -15,13 +12,14 @@ export default class Dashboard extends Component {
     this.setState({
       result: res.data
     });
-    console.log(this.state.result);
   }
   render() {
     return (
       <>
-        <Header pokeDB={this.state.result} />
-        <List pokeDB={this.state.result} />
+        <div class="main-content">
+          <Header pokeDB={this.state.result} />
+          <List pokeDB={this.state.result} />
+        </div>
         <Footer />
       </>
     );

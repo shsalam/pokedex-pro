@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Header, Profile, General } from "components";
+import { Navbar, Profile, General, Footer } from "components";
 import TYPE_COLORS from "../../helpers/colors";
 export default class Detail extends Component {
-  // description state
   state = {
     name: "",
     number: "",
@@ -38,7 +37,6 @@ export default class Detail extends Component {
     // urls for pokemon information
     const pokeURL = `https://pokeapi.co/api/v2/pokemon/${number}/`;
     const speciesURL = `https://pokeapi.co/api/v2/pokemon-species/${number}/`;
-
     // get basic pokemon info
     const pokemonRes = await axios.get(pokeURL);
     const name = pokemonRes.data.name;
@@ -69,7 +67,7 @@ export default class Detail extends Component {
           break;
       }
     });
-    // height and weight conversion
+    // height and weight logic
     const height =
       Math.round((pokemonRes.data.height * 0.328084 + 0.00001) * 100) / 100;
     const weight =
@@ -126,7 +124,7 @@ export default class Detail extends Component {
             .join(" ");
         })
         .join(", ");
-      //hatch conversion
+      //logic for hatch steps
       const hatchSteps = 255 * (res.data["hatch_counter"] + 1);
       //Updating State for General and Profile
       this.setState({
@@ -162,9 +160,9 @@ export default class Detail extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <div className="container mt-3">
-          <div className="card">
+        <Navbar />
+        <div className="content container mt-3 mb-4">
+          <div className="content card">
             <div className="card-header">
               <div className="row">
                 <div className="col-5">
@@ -206,7 +204,8 @@ export default class Detail extends Component {
               themeColor={this.state.themeColor}
               description={this.state.description}
             />
-            <hr />
+            <br />
+            <br />
             <Profile
               height={this.state.height}
               weight={this.state.weight}
@@ -220,6 +219,7 @@ export default class Detail extends Component {
             />
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -3,7 +3,7 @@ import React from "react";
 function Profile(props) {
   return (
     <div className="card-body">
-      <h5 class="card-title text-center">Profile</h5>
+      <h5 className="card-title text-center">Profile</h5>
       <div className="row">
         <div className="col-md-6">
           <div className="row">
@@ -29,9 +29,9 @@ function Profile(props) {
               <h6 className="float-right">Gender Ratio:</h6>
             </div>
             <div className="col-6">
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar"
+                  className="progress-bar"
                   role="progressbar"
                   style={{
                     width: `${props.genderRatioFemale}%`,
@@ -44,7 +44,7 @@ function Profile(props) {
                   <small>{props.genderRatioFemale}</small>
                 </div>
                 <div
-                  class="progress-bar"
+                  className="progress-bar"
                   role="progressbar"
                   style={{
                     width: `${props.genderRatioMale}%`,

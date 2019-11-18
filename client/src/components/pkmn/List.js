@@ -3,7 +3,7 @@ import { Card } from "components";
 export default class List extends Component {
   state = {
     currentPage: 1,
-    pokePerPage: 16
+    pokePerPage: 12
   };
 
   // Function to control pagination
@@ -47,13 +47,13 @@ export default class List extends Component {
     });
 
     return (
-      <div className="container view">
-        <nav aria-label="Page navigation example">
-          <ul className="pagination pg-blue mt-3">{renderPageNumbers}</ul>
+      <div className="main-content container view">
+        <nav className="container">
+          <ul className="row pagination pg-blue mt-3">{renderPageNumbers}</ul>
         </nav>
 
         {pokemon && pokemon.length > 0 ? (
-          <div className="row">
+          <div className="row mb-3">
             {currentPoke.map(poke => (
               <Card key={poke.name} name={poke.name} url={poke.url} />
             ))}

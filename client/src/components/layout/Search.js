@@ -6,7 +6,7 @@ export default class Search extends Component {
     filteredNumber: [],
     query: ""
   };
-
+  // search bar functions
   handleChange = event => {
     const query = event.target.value;
     const { pokeDB } = this.props;
@@ -37,6 +37,7 @@ export default class Search extends Component {
       filteredNumber: []
     });
   };
+
   render() {
     return (
       <div className="search mb-3">
@@ -68,9 +69,15 @@ export default class Search extends Component {
               this.state.query.length <= 3 &&
               this.state.query.length > 0 &&
               this.state.filteredNumber.slice(0, 4).map(i => (
-                <li key={i.name}>
-                  {i.name} #{i.url.split("/")[i.url.split("/").length - 2]}
-                </li>
+                <Link
+                  to={`pokemon/${
+                    i.url.split("/")[i.url.split("/").length - 2]
+                  }`}
+                >
+                  <li key={i.name}>
+                    {i.name} #{i.url.split("/")[i.url.split("/").length - 2]}
+                  </li>
+                </Link>
               ))}
           </ul>
         </div>

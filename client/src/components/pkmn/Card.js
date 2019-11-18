@@ -11,7 +11,6 @@ export default class Card extends Component {
     name: "",
     sprite: "",
     number: "",
-    imageLoading: true,
     requests: false
   };
   componentDidMount() {
@@ -27,7 +26,6 @@ export default class Card extends Component {
           <div className="card">
             <Sprite
               className="card-img-top rounded mx-auto mt-2"
-              onLoad={() => this.setState({ imageLoading: false })}
               onError={() => this.setState({ requests: true })}
               src={this.state.sprite}
             ></Sprite>
