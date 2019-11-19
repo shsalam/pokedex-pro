@@ -44,7 +44,7 @@ export default class Search extends Component {
         <div className="searchForm">
           <form>
             <input
-              placeholder="Search for..."
+              placeholder="Search by name or number.."
               value={this.state.query}
               onChange={this.handleChange}
             />
